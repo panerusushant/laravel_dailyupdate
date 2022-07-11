@@ -23,7 +23,7 @@ use App\Http\Controllers\RegistrationController;
 */
 
 
-Route::get('/',[LoginController::class, 'create']);
+Route::get('/', [LoginController::class, 'create']);
 Route::post('/login',[LoginController::class, 'login']);
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index']);

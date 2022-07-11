@@ -27,7 +27,7 @@
                         <a class="nav-link" href="welcome">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="views/logout.php">Logout</a>
+                        <a class="nav-link" href="/logout">Logout</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/blog-form">Add Blog</a>

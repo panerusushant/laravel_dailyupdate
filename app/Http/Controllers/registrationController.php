@@ -36,23 +36,19 @@ class registrationController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        try{
+        
 
-            // $request->validate();
+             
 
-        $flight = User::create([
-            'username' => $request->username,
-            'email' =>$request->email,
-            'password' => $request->password,
-            'role' => 'user'
-        ]);
-        return redirect('/register-form');
+        // $flight = User::create([
+        //     'username' => $request->username,
+        //     'email' =>$request->email,
+        //     'password' => $request->password,
+        //     'role' => 'user'
+        // ]);
+        // return redirect('/register-form');
 
-    }catch(\Exception $e){
-
-        dd('something went wrong'. $e ->getMessage());
-       
-    }
+    
     }
 
     /**

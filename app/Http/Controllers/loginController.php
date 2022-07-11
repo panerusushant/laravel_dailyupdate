@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\loginPostRequest;
 
 class loginController extends Controller
 {
@@ -34,32 +34,31 @@ class loginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePostRequest   $request)
+    public function store( loginPostRequest $request)
     {
-    //    $email = $request->email;
-    //    $password = $request->password;
+   
+    
+
+       if(Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'user' ])){
+        
+         return redirect('/user');
+        
+
+       }elseif(Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'admin' ])){
+            
+         return redirect('/admin');
        
 
-    //    if(Auth::attempt(['email' => $email, 'password' => $password, 'role' => 'user' ])){
-        
-    //      return redirect('/user');
-        
-
-    //    }elseif(Auth::attempt(['email' => $email, 'password' => $password, 'role' => 'admin' ])){
+       }elseif(Auth::attempt(['email' => !$request->email, 'password' => $request->password])){
             
-    //      return redirect('/admin');
-       
-
-    //    }elseif(Auth::attempt(['email' => !$email, 'password' => $password])){
-            
-    //     return 'Email Or Password Incorrect!';
+        return 'Email Or Password Incorrect!';
         
 
-    //    }else{
+       }else{
 
-    //     return redirect('/');
+        return redirect('/');
 
-    //    }
+       }
     }
 
     /**

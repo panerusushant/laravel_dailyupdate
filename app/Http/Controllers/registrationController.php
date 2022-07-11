@@ -40,13 +40,13 @@ class registrationController extends Controller
 
              
 
-        // $flight = User::create([
-        //     'username' => $request->username,
-        //     'email' =>$request->email,
-        //     'password' => $request->password,
-        //     'role' => 'user'
-        // ]);
-        // return redirect('/register-form');
+        $flight = User::create([
+            'username' => $request->username,
+            'email' =>$request->email,
+            'password' => $request->password,
+            'role' => 'user'
+        ]);
+        return redirect('/register-form');
 
     
     }

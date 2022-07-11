@@ -40,8 +40,9 @@
         </nav>
 
 
-
-       
+        @if(session()->has('Success'))
+            <div class="alert-danger">{{session()->get('Success') }}</div>
+        @endif
                             
 
                        

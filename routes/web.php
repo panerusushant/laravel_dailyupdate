@@ -2,12 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\loginController;
+use App\Http\Controllers\LoginController;
 
-use App\Http\Controllers\userController;
+use App\Http\Controllers\UserController;
 
-use App\Http\Controllers\adminController;
-use App\Http\Controllers\registrationController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,13 @@ use App\Http\Controllers\registrationController;
 */
 
 
-Route::get('/',[loginController::class,'create']);
-Route::post('/login',[loginController::class,'store']);
-Route::get('/user', [userController::class, 'index']);
-Route::get('/admin', [adminController::class, 'index']);
-Route::get('/register-form', [registrationController::class, 'create']);
-Route::post('/register-user', [registrationController::class, 'store']);
+Route::get('/',[LoginController::class, 'create']);
+Route::post('/login',[LoginController::class, 'login']);
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/register-form', [RegistrationController::class, 'create']);
+Route::post('/register-user', [RegistrationController::class, 'store']);
+Route::get('/blog-form', [BlogController::class, 'create']);
+Route::post('/post-blog', [BlogController::class, 'store']);
 
 

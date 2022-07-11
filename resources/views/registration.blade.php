@@ -49,6 +49,9 @@ session_start();
 
 
 
+        @if(session()->has('Error'))
+            <div class="alert-danger">{{session()->get('Error') }}</div>
+        @endif
 
         <section class="vh-100" style="background-color: #eee;">
             <div class="container h-100">

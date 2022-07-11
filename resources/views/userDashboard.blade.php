@@ -30,7 +30,7 @@
                         <a class="nav-link" href="views/logout.php">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Add Update</a>
+                        <a class="nav-link" href="/blog-form">Add Blog</a>
                     </li>
 
 
@@ -41,7 +41,12 @@
         </nav>
 
 
-
+        @if(session()->has('Success'))
+            <div class="alert-danger">{{session()->get('Success') }}</div>
+                @else
+                    <div class="alert-danger">{{session()->get('Error') }}</div>
+                                                
+                 @endif
                       
 
    

@@ -29,6 +29,6 @@ Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/register-form', [RegistrationController::class, 'create']);
 Route::post('/register-user', [RegistrationController::class, 'store']);
 Route::get('/blog-form', [BlogController::class, 'create']);
-Route::post('/post', [BlogController::class, 'store']);
+Route::post('/posts', [BlogController::class, 'store']);
 
 

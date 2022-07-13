@@ -24,7 +24,7 @@
 
                                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Create Blog</p>
 
-                                    <form class="mx-1 mx-md-4" action="/post-blog" method="POST">
+                                    <form class="mx-1 mx-md-4" action="/posts" method="POST">
                                         @csrf
                                             
                                                 @if(session()->has('Success'))

@@ -26,9 +26,6 @@ Route::get('/',[LoginController::class, 'create']);
 Route::post('/login',[LoginController::class, 'login']);
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/register-form', [RegistrationController::class, 'create']);
-Route::post('/register-user', [RegistrationController::class, 'store']);
-Route::get('/blog-form', [BlogController::class, 'create']);
-Route::post('/post-blog', [BlogController::class, 'store']);
+
 
 

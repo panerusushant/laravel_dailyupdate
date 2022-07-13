@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegistrationController;
 
 /*
@@ -22,13 +23,14 @@ use App\Http\Controllers\RegistrationController;
 */
 
 
-Route::get('/',[LoginController::class, 'create']);
+Route::get('/', [LoginController::class, 'create']);
 Route::post('/login',[LoginController::class, 'login']);
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/register-form', [RegistrationController::class, 'create']);
 Route::post('/register-user', [RegistrationController::class, 'store']);
 Route::get('/blog-form', [BlogController::class, 'create']);
-Route::post('/posts', [BlogController::class, 'store']);
+Route::post('/post', [BlogController::class, 'store']);
+Route::get('/logout', [LogoutController::class, 'logout']);
 
 

@@ -24,7 +24,7 @@
                         <a class="nav-link" href="adminpanel">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="views/logout.php">Logout</a>
+                        <a class="nav-link" href="/logout">Logout</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/register-form">Register User</a>

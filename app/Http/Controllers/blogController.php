@@ -23,16 +23,17 @@ class BlogController extends Controller
     public function store(BlogPostRequest $request)
     {
 
-        
-        $blog = Blog::create([
+        try{
+
+            $blog = Blog::create([
                
-            'user_id' => $request->user_id,
-            'title' => $request->title,
-            'content' =>$request->content
-        ]);
-        if($blog){
+                'user_id' => $request->user_id,
+                'title' => $request->title,
+                'content' =>$request->content
+            ]);
             return redirect()->back()->with('Success', 'Blog successfully added!');
-        }else{
+
+        }catch(\Exception $e){
             return redirect()->back()->with('Error', 'Blog not added!');
         }
         

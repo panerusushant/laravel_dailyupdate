@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\LoginController;
+
+use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\RegistrationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +21,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/',[LoginController::class, 'create']);
+Route::post('/login',[LoginController::class, 'login']);
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index']);
+
+
+

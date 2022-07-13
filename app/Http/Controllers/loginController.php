@@ -40,12 +40,6 @@ class loginController extends Controller
             
          return redirect('/admin');
        
-
-       }elseif(Auth::attempt(['email' => !$request->email, 'password' => $request->password])){
-            
-        return 'Email Or Password Incorrect!';
-        
-
        }else{
 
         return redirect('/');

@@ -15,11 +15,4 @@ class userController extends Controller
     {
         return view('userDashboard');
     }
-
-   
-
-    
-
-    
-    
 }

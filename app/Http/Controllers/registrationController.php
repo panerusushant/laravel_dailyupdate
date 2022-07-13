@@ -8,16 +8,7 @@ use Illuminate\Http\Request;
 
 class registrationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -37,10 +28,7 @@ class registrationController extends Controller
     public function store(RegistrationPostRequest $request)
     {
         
-
-             
-
-        $flight = User::create([
+        $user = User::create([
             'username' => $request->username,
             'email' =>$request->email,
             'password' => $request->password,
@@ -48,7 +36,6 @@ class registrationController extends Controller
         ]);
         return redirect('/register-form');
 
-    
     }
 
    

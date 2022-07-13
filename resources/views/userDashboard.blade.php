@@ -16,7 +16,7 @@
 
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">USER</a>
+            <a class="navbar-brand" href="#">{{Auth::user()->username}}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -48,6 +48,37 @@
                                                 
                  @endif
                       
+
+
+
+
+                <div class="row">
+                    
+                    @foreach ($posts as $post)
+                        @foreach($post->blogs as $p)
+                        <div class="col-12 col-lg-4 d-flex justify-content-center">
+        
+                                <div class="card text-white bg-dark mt-5">
+        
+                                <div class="card-body" style="width: 18rem;">
+        
+                                    <p class="card-text"><?php echo $post->username; ?>.</p><br>
+                                    <p class="card-text"><?php echo $p->title; ?>.</p><br>
+                                    <p class="card-text"><?php echo $p->content; ?>.</p><br>
+        
+                                    <p class="card-text"style="font-size:10px;" ><?php echo $p['created_at']; ?>.</p>                           
+                                   
+        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        @endforeach
+                    @endforeach
+                        
+                </div>
+                 
 
    
 

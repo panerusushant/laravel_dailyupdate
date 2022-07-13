@@ -50,4 +50,9 @@ class User extends Authenticatable
             set:fn($value) => bcrypt($value),
         );
     }
+
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
 }

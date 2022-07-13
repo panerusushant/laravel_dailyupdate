@@ -15,4 +15,9 @@ class Blog extends Model
         'content'
         
     ];
+
+    public function user(){
+        return $this->belongsTo("User");
+      }
+    
 }

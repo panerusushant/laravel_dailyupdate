@@ -35,7 +35,6 @@ class BlogController extends Controller
         }else{
             return redirect()->back()->with('Error', 'Blog not added!');
         }
-       
         
     }
 

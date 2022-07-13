@@ -30,10 +30,9 @@
                         <a class="nav-link" href="/register-form">Register User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register Admin</a>
+                        <a class="nav-link" href="/blog-form">Register User</a>
                     </li>
-
-
+                    
                 </ul>
 
             </div>
@@ -47,7 +46,32 @@
 
                        
   
+        <div class="row">
+                    
+            @foreach ($posts as $post)
+                @foreach($post->blogs as $p)
+                <div class="col-12 col-lg-4 d-flex justify-content-center">
 
+                        <div class="card text-white bg-dark mt-5">
+
+                        <div class="card-body" style="width: 18rem;">
+
+                            <p class="card-text"><?php echo $post->username; ?>.</p><br>
+                            <p class="card-text"><?php echo $p->title; ?>.</p><br>
+                            <p class="card-text"><?php echo $p->content; ?>.</p><br>
+
+                            <p class="card-text"style="font-size:10px;" ><?php echo $p['created_at']; ?>.</p>                           
+                           
+
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                @endforeach
+            @endforeach
+                
+        </div>
 
 
 

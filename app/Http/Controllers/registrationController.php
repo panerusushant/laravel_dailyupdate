@@ -28,13 +28,18 @@ class registrationController extends Controller
     public function store(RegistrationPostRequest $request)
     {
         
-        $user = User::create([
-            'username' => $request->username,
-            'email' =>$request->email,
-            'password' => $request->password,
-            'role' => 'user'
-        ]);
-        return redirect('/register-form');
+        try{
+
+            $user = User::create([
+                'username' => $request->username,
+                'email' =>$request->email,
+                'password' => $request->password,
+                'role' => 'user'
+            ]);
+            return redirect('/admin') ->with('Success', 'User Registered!');
+        }catch(\Exception $e){
+            return redirect() ->back()->with('Error', 'Try Again!');
+        }
 
     }
 
